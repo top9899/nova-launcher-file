@@ -1,0 +1,53 @@
+{
+  "name": "normal-launcher",
+  "version": "1.0.0",
+  "description": "NOVA — Minecraft Java launcher",
+  "author": "Edgar",
+  "copyright": "Copyright © 2026 Edgar | #NOVAbyEdgar | https://www.youtube.com/channel/UCYH_YOegbMe-5alO7nsQQwQ",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "minecraft-launcher-core": "^3.18.2"
+  },
+  "build": {
+    "appId": "ru.nova.launcher",
+    "productName": "NOVA Launcher",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "installerHeaderIcon": "icon.ico",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "NOVA Launcher"
+    }
+  },
+  "allowScripts": {
+    "electron@38.8.6": true,
+    "electron-winstaller@5.4.0": true
+  }
+}
